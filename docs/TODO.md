@@ -4,18 +4,18 @@ This checklist is intentionally split into very small, AI-friendly increments.
 
 ## Phase 0 - Initialize and first deployable Hello World
 
-- [ ] Create repository scaffold for a React + TypeScript web app.
-- [ ] Add `.gitignore` and verify no secrets or build artifacts are tracked.
-- [ ] Add minimal README sections: project goal, local run steps, and scope for v1.
-- [ ] Start app and render plain "Hello World" page.
-- [ ] Add a basic app shell component (`App`) with a title and one paragraph.
-- [ ] Add a smoke test that verifies "Hello World" renders.
-- [ ] Add formatter/linter config with one command each for check and fix.
-- [ ] Add initial CI workflow to run install, lint, type-check, and tests on PRs.
-- [ ] Add dependency vulnerability scan to CI (`npm audit` or equivalent).
-- [ ] Add minimal deploy config (for example, Vercel/Netlify/GitHub Pages) so Hello World can be deployed.
-- [ ] Deploy first Hello World build and record the URL in README.
-- [ ] Document security baseline in `docs/security.md` (input handling, dependency updates, no secrets in repo).
+- [x] Create repository scaffold for a React + TypeScript web app.
+- [x] Add `.gitignore` and verify no secrets or build artifacts are tracked.
+- [x] Add minimal README sections: project goal, local run steps, and scope for v1.
+- [x] Start app and render plain "Hello World" page.
+- [x] Add a basic app shell component (`App`) with a title and one paragraph.
+- [x] Add a smoke test that verifies "Hello World" renders.
+- [x] Add formatter/linter config with one command each for check and fix.
+- [x] Add initial CI workflow to run install, lint, type-check, and tests on PRs.
+- [x] Add dependency vulnerability scan to CI (`npm audit` or equivalent).
+- [x] Add minimal deploy config (for example, Vercel/Netlify/GitHub Pages) so Hello World can be deployed.
+- [x] Deploy first Hello World build and record the URL in README.
+- [x] Document security baseline in `docs/security.md` (input handling, dependency updates, no secrets in repo).
 
 ## Phase 1 - Basic UI with mocked data
 
