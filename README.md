@@ -1,4 +1,5 @@
 # Hackathon Project Matcher
+# ---
 
 ## Project goal
 
