@@ -1,6 +1,8 @@
 name: CI
 
 on:
+  push:
+    branches: ["main"]
   pull_request:
   workflow_dispatch:
 
@@ -24,11 +26,20 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Format check
+        run: npm run format:check
+
       - name: Type check
         run: npm run type-check
 
-      - name: Test
-        run: npm run test
+      - name: Unit tests with coverage threshold
+        run: npm run test:coverage
+
+      - name: Build
+        run: npm run build
 
       - name: Dependency audit
         run: npm audit --audit-level=high
+
+      - name: License check
+        run: npm run licenses:check

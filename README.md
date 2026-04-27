@@ -20,9 +20,20 @@ npm run lint
 npm run lint:fix
 npm run type-check
 npm run test
+npm run test:coverage
+npm run build
+npm run licenses:check
 npm run format:check
 npm run format:fix
 ```
+
+CI workflow runs these checks on pull requests and pushes to `main`:
+
+- lint + format check
+- type-check + test coverage threshold
+- production build
+- dependency vulnerability audit
+- license summary check
 
 ## v1 scope
 

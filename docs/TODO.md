@@ -86,12 +86,12 @@ This checklist is intentionally split into very small, AI-friendly increments.
 - [ ] Add end-to-end test: create second project -> switch with confirm.
 - [ ] Add end-to-end test: delete project -> users become inactive.
 - [ ] Add coverage reporting and minimum threshold for core state logic.
-- [ ] Add CI gate to fail on lint/type/test failures and low coverage.
-- [ ] Add CI branch protection guidance in `docs/engineering.md`.
-- [ ] Run dependency and license checks in CI.
+- [x] Add CI gate to fail on lint/type/test failures and low coverage.
+- [x] Add CI branch protection guidance in `docs/engineering.md`.
+- [x] Run dependency and license checks in CI.
 - [ ] Add regression checklist in `docs/testing.md`.
 - [ ] Expand `docs/security.md` with threat notes for local identity and input validation.
-- [ ] Update README with full local dev, test, and CI instructions.
+- [x] Update README with full local dev, test, and CI instructions.
 
 ## Phase 7 - Deployment and operational readiness
 
