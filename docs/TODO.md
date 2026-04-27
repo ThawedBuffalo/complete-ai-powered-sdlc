@@ -45,17 +45,17 @@ This checklist is intentionally split into very small, AI-friendly increments.
 
 ## Phase 3 - Project CRUD (real functionality, piece by piece)
 
-- [ ] Add create-project form with required fields (`title`, `description`, `difficulty`, `status`).
-- [ ] Auto-set `ownerName` from current user on create.
-- [ ] Auto-set `id`, `createdAt`, and `updatedAt` on create.
-- [ ] Add edit-project flow that updates fields and refreshes `updatedAt`.
-- [ ] Add delete-project action with confirmation.
-- [ ] On delete, remove project and unassign all its participants to inactive.
-- [ ] Add form validation messages for required fields and reasonable lengths.
-- [ ] Add unit tests for project create/edit/delete state transitions.
-- [ ] Add component tests for form validation and delete confirmation.
-- [ ] Add security checks for text input normalization and unsafe HTML avoidance.
-- [ ] Document project data model and CRUD behavior in README.
+- [x] Add create-project form with required fields (`title`, `description`, `difficulty`, `status`).
+- [x] Auto-set `ownerName` from current user on create.
+- [x] Auto-set `id`, `createdAt`, and `updatedAt` on create.
+- [x] Add edit-project flow that updates fields and refreshes `updatedAt`.
+- [x] Add delete-project action with confirmation.
+- [x] On delete, remove project and unassign all its participants to inactive.
+- [x] Add form validation messages for required fields and reasonable lengths.
+- [x] Add unit tests for project create/edit/delete state transitions.
+- [x] Add component tests for form validation and delete confirmation.
+- [x] Add security checks for text input normalization and unsafe HTML avoidance.
+- [x] Document project data model and CRUD behavior in README.
 
 ## Phase 4 - Join and switch project rule
 
