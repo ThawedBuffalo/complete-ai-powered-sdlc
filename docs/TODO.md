@@ -19,17 +19,17 @@ This checklist is intentionally split into very small, AI-friendly increments.
 
 ## Phase 1 - Basic UI with mocked data
 
-- [ ] Define TypeScript interfaces for `User` and `Project` per PRD fields.
-- [ ] Create small in-memory mock dataset file for users and projects.
-- [ ] Render project card grid using mock projects.
-- [ ] Show card fields: title, short description, participant count, status, tags.
-- [ ] Add read-only project details panel/view when clicking a card.
-- [ ] Add read-only sections for active users and inactive users from mock data.
-- [ ] Add loading empty-state component for "no projects yet".
-- [ ] Add component tests for project card rendering and details selection.
-- [ ] Add accessibility pass for semantic headings, button labels, and focus order.
-- [ ] Add input/output safety notes for mock-data UI in `docs/security.md`.
-- [ ] Update README with screenshots/GIF of mock UI and architecture notes.
+- [x] Define TypeScript interfaces for `User` and `Project` per PRD fields.
+- [x] Create small in-memory mock dataset file for users and projects.
+- [x] Render project card grid using mock projects.
+- [x] Show card fields: title, short description, participant count, status, tags.
+- [x] Add read-only project details panel/view when clicking a card.
+- [x] Add read-only sections for active users and inactive users from mock data.
+- [x] Add loading empty-state component for "no projects yet".
+- [x] Add component tests for project card rendering and details selection.
+- [x] Add accessibility pass for semantic headings, button labels, and focus order.
+- [x] Add input/output safety notes for mock-data UI in `docs/security.md`.
+- [x] Update README with screenshots/GIF of mock UI and architecture notes.
 
 ## Phase 2 - Identity flow (real functionality, piece by piece)
 
