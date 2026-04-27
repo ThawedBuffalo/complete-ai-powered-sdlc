@@ -12,7 +12,9 @@ describe("App", () => {
 
   it("renders the projects section", () => {
     render(<App />);
-    expect(screen.getByRole("region", { name: /projects/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("region", { name: /projects/i }),
+    ).toBeInTheDocument();
   });
 
   it("renders mock project cards on load", () => {
@@ -21,4 +23,3 @@ describe("App", () => {
     expect(screen.getByText("Green Hackathon Tracker")).toBeInTheDocument();
   });
 });
-

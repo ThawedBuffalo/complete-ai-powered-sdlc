@@ -1,16 +1,16 @@
-import type { AppState, AppAction } from '../types';
-import { initialUsers, initialProjects } from '../data/mockData';
-import { sanitizeText } from '../utils/sanitize';
+import type { AppState, AppAction } from "../types";
+import { initialUsers, initialProjects } from "../data/mockData";
+import { sanitizeText } from "../utils/sanitize";
 
 export const initialState: AppState = {
   users: initialUsers,
   projects: initialProjects,
-  currentUserId: 'u1',
+  currentUserId: "u1",
 };
 
 export function appReducer(state: AppState, action: AppAction): AppState {
   switch (action.type) {
-    case 'CREATE_PROJECT': {
+    case "CREATE_PROJECT": {
       const currentUser = state.users.find((u) => u.id === state.currentUserId);
       const now = new Date().toISOString();
       const newProject = {
@@ -19,7 +19,7 @@ export function appReducer(state: AppState, action: AppAction): AppState {
         description: sanitizeText(action.payload.description),
         difficulty: action.payload.difficulty,
         status: action.payload.status,
-        ownerName: currentUser?.name ?? 'Unknown',
+        ownerName: currentUser?.name ?? "Unknown",
         participantIds: [],
         createdAt: now,
         updatedAt: now,
@@ -27,7 +27,7 @@ export function appReducer(state: AppState, action: AppAction): AppState {
       return { ...state, projects: [...state.projects, newProject] };
     }
 
-    case 'UPDATE_PROJECT': {
+    case "UPDATE_PROJECT": {
       const now = new Date().toISOString();
       return {
         ...state,
@@ -46,7 +46,7 @@ export function appReducer(state: AppState, action: AppAction): AppState {
       };
     }
 
-    case 'DELETE_PROJECT': {
+    case "DELETE_PROJECT": {
       return {
         ...state,
         projects: state.projects.filter((p) => p.id !== action.payload.id),
@@ -56,7 +56,7 @@ export function appReducer(state: AppState, action: AppAction): AppState {
       };
     }
 
-    case 'SET_CURRENT_USER': {
+    case "SET_CURRENT_USER": {
       return { ...state, currentUserId: action.payload.userId };
     }
 

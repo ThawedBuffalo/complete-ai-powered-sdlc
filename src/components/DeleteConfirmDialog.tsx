@@ -4,7 +4,11 @@ interface Props {
   onCancel: () => void;
 }
 
-export function DeleteConfirmDialog({ projectTitle, onConfirm, onCancel }: Props) {
+export function DeleteConfirmDialog({
+  projectTitle,
+  onConfirm,
+  onCancel,
+}: Props) {
   return (
     <div
       className="modal-overlay"
@@ -15,9 +19,8 @@ export function DeleteConfirmDialog({ projectTitle, onConfirm, onCancel }: Props
       <div className="modal-box modal-box--narrow">
         <h2>Delete Project</h2>
         <p>
-          Are you sure you want to delete{' '}
-          <strong>{projectTitle}</strong>? This will unassign all participants
-          and cannot be undone.
+          Are you sure you want to delete <strong>{projectTitle}</strong>? This
+          will unassign all participants and cannot be undone.
         </p>
         <div className="form-actions">
           <button className="btn btn-secondary" onClick={onCancel}>

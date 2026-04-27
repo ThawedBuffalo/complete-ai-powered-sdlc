@@ -1,23 +1,23 @@
-import { useReducer, useState } from 'react';
-import './App.css';
-import { appReducer, initialState } from './store/appReducer';
-import { ProjectCard } from './components/ProjectCard';
-import { ProjectDetails } from './components/ProjectDetails';
-import { ProjectForm } from './components/ProjectForm';
-import { DeleteConfirmDialog } from './components/DeleteConfirmDialog';
-import { EmptyState } from './components/EmptyState';
-import type { Project } from './types';
+import { useReducer, useState } from "react";
+import "./App.css";
+import { appReducer, initialState } from "./store/appReducer";
+import { ProjectCard } from "./components/ProjectCard";
+import { ProjectDetails } from "./components/ProjectDetails";
+import { ProjectForm } from "./components/ProjectForm";
+import { DeleteConfirmDialog } from "./components/DeleteConfirmDialog";
+import { EmptyState } from "./components/EmptyState";
+import type { Project } from "./types";
 
 type Modal =
-  | { kind: 'none' }
-  | { kind: 'create' }
-  | { kind: 'edit'; project: Project }
-  | { kind: 'delete'; project: Project };
+  | { kind: "none" }
+  | { kind: "create" }
+  | { kind: "edit"; project: Project }
+  | { kind: "delete"; project: Project };
 
 function App() {
   const [state, dispatch] = useReducer(appReducer, initialState);
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [modal, setModal] = useState<Modal>({ kind: 'none' });
+  const [modal, setModal] = useState<Modal>({ kind: "none" });
 
   const currentUser =
     state.users.find((u) => u.id === state.currentUserId) ?? null;
@@ -32,10 +32,10 @@ function App() {
           <label htmlFor="user-select">Current user:</label>
           <select
             id="user-select"
-            value={state.currentUserId ?? ''}
+            value={state.currentUserId ?? ""}
             onChange={(e) =>
               dispatch({
-                type: 'SET_CURRENT_USER',
+                type: "SET_CURRENT_USER",
                 payload: { userId: e.target.value || null },
               })
             }
@@ -57,7 +57,7 @@ function App() {
             {currentUser && (
               <button
                 className="btn btn-primary"
-                onClick={() => setModal({ kind: 'create' })}
+                onClick={() => setModal({ kind: "create" })}
               >
                 + New Project
               </button>
@@ -79,8 +79,8 @@ function App() {
                         selectedId === project.id ? null : project.id,
                       )
                     }
-                    onEdit={() => setModal({ kind: 'edit', project })}
-                    onDelete={() => setModal({ kind: 'delete', project })}
+                    onEdit={() => setModal({ kind: "edit", project })}
+                    onDelete={() => setModal({ kind: "delete", project })}
                   />
                 </li>
               ))}
@@ -99,44 +99,44 @@ function App() {
         )}
       </main>
 
-      {modal.kind === 'create' && (
+      {modal.kind === "create" && (
         <ProjectForm
           mode="create"
           onSubmit={(fields) => {
-            dispatch({ type: 'CREATE_PROJECT', payload: fields });
-            setModal({ kind: 'none' });
+            dispatch({ type: "CREATE_PROJECT", payload: fields });
+            setModal({ kind: "none" });
           }}
-          onCancel={() => setModal({ kind: 'none' })}
+          onCancel={() => setModal({ kind: "none" })}
         />
       )}
 
-      {modal.kind === 'edit' && (
+      {modal.kind === "edit" && (
         <ProjectForm
           mode="edit"
           initial={modal.project}
           onSubmit={(fields) => {
             dispatch({
-              type: 'UPDATE_PROJECT',
+              type: "UPDATE_PROJECT",
               payload: { id: modal.project.id, ...fields },
             });
-            setModal({ kind: 'none' });
+            setModal({ kind: "none" });
           }}
-          onCancel={() => setModal({ kind: 'none' })}
+          onCancel={() => setModal({ kind: "none" })}
         />
       )}
 
-      {modal.kind === 'delete' && (
+      {modal.kind === "delete" && (
         <DeleteConfirmDialog
           projectTitle={modal.project.title}
           onConfirm={() => {
             dispatch({
-              type: 'DELETE_PROJECT',
+              type: "DELETE_PROJECT",
               payload: { id: modal.project.id },
             });
             if (selectedId === modal.project.id) setSelectedId(null);
-            setModal({ kind: 'none' });
+            setModal({ kind: "none" });
           }}
-          onCancel={() => setModal({ kind: 'none' })}
+          onCancel={() => setModal({ kind: "none" })}
         />
       )}
     </div>
@@ -144,4 +144,3 @@ function App() {
 }
 
 export default App;
-

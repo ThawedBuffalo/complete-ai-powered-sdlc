@@ -1,4 +1,4 @@
-import type { Project, User } from '../types';
+import type { Project, User } from "../types";
 
 interface Props {
   project: Project;

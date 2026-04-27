@@ -1,9 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
-import { DeleteConfirmDialog } from './DeleteConfirmDialog';
+import { render, screen, fireEvent } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
+import { DeleteConfirmDialog } from "./DeleteConfirmDialog";
 
-describe('DeleteConfirmDialog', () => {
-  it('displays the project title in the dialog', () => {
+describe("DeleteConfirmDialog", () => {
+  it("displays the project title in the dialog", () => {
     render(
       <DeleteConfirmDialog
         projectTitle="AI Code Reviewer"
@@ -14,7 +14,7 @@ describe('DeleteConfirmDialog', () => {
     expect(screen.getByText(/AI Code Reviewer/)).toBeInTheDocument();
   });
 
-  it('calls onConfirm when Delete button is clicked', () => {
+  it("calls onConfirm when Delete button is clicked", () => {
     const onConfirm = vi.fn();
     render(
       <DeleteConfirmDialog
@@ -23,11 +23,11 @@ describe('DeleteConfirmDialog', () => {
         onCancel={vi.fn()}
       />,
     );
-    fireEvent.click(screen.getByRole('button', { name: /delete/i }));
+    fireEvent.click(screen.getByRole("button", { name: /delete/i }));
     expect(onConfirm).toHaveBeenCalledOnce();
   });
 
-  it('calls onCancel when Cancel button is clicked', () => {
+  it("calls onCancel when Cancel button is clicked", () => {
     const onCancel = vi.fn();
     render(
       <DeleteConfirmDialog
@@ -36,11 +36,11 @@ describe('DeleteConfirmDialog', () => {
         onCancel={onCancel}
       />,
     );
-    fireEvent.click(screen.getByRole('button', { name: /cancel/i }));
+    fireEvent.click(screen.getByRole("button", { name: /cancel/i }));
     expect(onCancel).toHaveBeenCalledOnce();
   });
 
-  it('does not call onConfirm when Cancel is clicked', () => {
+  it("does not call onConfirm when Cancel is clicked", () => {
     const onConfirm = vi.fn();
     render(
       <DeleteConfirmDialog
@@ -49,7 +49,7 @@ describe('DeleteConfirmDialog', () => {
         onCancel={vi.fn()}
       />,
     );
-    fireEvent.click(screen.getByRole('button', { name: /cancel/i }));
+    fireEvent.click(screen.getByRole("button", { name: /cancel/i }));
     expect(onConfirm).not.toHaveBeenCalled();
   });
 });

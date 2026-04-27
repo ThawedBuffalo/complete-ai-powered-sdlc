@@ -1,5 +1,5 @@
-export type Difficulty = 'easy' | 'medium' | 'hard';
-export type ProjectStatus = 'open' | 'in-progress' | 'full' | 'completed';
+export type Difficulty = "easy" | "medium" | "hard";
+export type ProjectStatus = "open" | "in-progress" | "full" | "completed";
 
 export interface User {
   id: string;
@@ -33,7 +33,7 @@ export interface AppState {
 }
 
 export type AppAction =
-  | { type: 'CREATE_PROJECT'; payload: ProjectFormFields }
-  | { type: 'UPDATE_PROJECT'; payload: { id: string } & ProjectFormFields }
-  | { type: 'DELETE_PROJECT'; payload: { id: string } }
-  | { type: 'SET_CURRENT_USER'; payload: { userId: string | null } };
+  | { type: "CREATE_PROJECT"; payload: ProjectFormFields }
+  | { type: "UPDATE_PROJECT"; payload: { id: string } & ProjectFormFields }
+  | { type: "DELETE_PROJECT"; payload: { id: string } }
+  | { type: "SET_CURRENT_USER"; payload: { userId: string | null } };

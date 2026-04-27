@@ -1,4 +1,4 @@
-import type { Project } from '../types';
+import type { Project } from "../types";
 
 interface Props {
   project: Project;
@@ -10,16 +10,16 @@ interface Props {
 }
 
 const DIFFICULTY_LABEL: Record<string, string> = {
-  easy: 'Easy',
-  medium: 'Medium',
-  hard: 'Hard',
+  easy: "Easy",
+  medium: "Medium",
+  hard: "Hard",
 };
 
 const STATUS_LABEL: Record<string, string> = {
-  open: 'Open',
-  'in-progress': 'In Progress',
-  full: 'Full',
-  completed: 'Completed',
+  open: "Open",
+  "in-progress": "In Progress",
+  full: "Full",
+  completed: "Completed",
 };
 
 export function ProjectCard({
@@ -32,7 +32,7 @@ export function ProjectCard({
 }: Props) {
   return (
     <article
-      className={`project-card${isSelected ? ' project-card--selected' : ''}`}
+      className={`project-card${isSelected ? " project-card--selected" : ""}`}
       aria-selected={isSelected}
     >
       <button
@@ -51,7 +51,7 @@ export function ProjectCard({
             {STATUS_LABEL[project.status]}
           </span>
           <span className="project-card__participants">
-            {participantCount} participant{participantCount !== 1 ? 's' : ''}
+            {participantCount} participant{participantCount !== 1 ? "s" : ""}
           </span>
         </div>
       </button>

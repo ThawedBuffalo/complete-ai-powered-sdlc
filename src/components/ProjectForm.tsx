@@ -1,9 +1,14 @@
-import { useState } from 'react';
-import type { Difficulty, Project, ProjectFormFields, ProjectStatus } from '../types';
-import { MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH } from '../utils/sanitize';
+import { useState } from "react";
+import type {
+  Difficulty,
+  Project,
+  ProjectFormFields,
+  ProjectStatus,
+} from "../types";
+import { MAX_DESCRIPTION_LENGTH, MAX_TITLE_LENGTH } from "../utils/sanitize";
 
 interface Props {
-  mode: 'create' | 'edit';
+  mode: "create" | "edit";
   initial?: Project;
   onSubmit: (fields: ProjectFormFields) => void;
   onCancel: () => void;
@@ -20,13 +25,13 @@ function validate(title: string, description: string): FormErrors {
   const trimmedDesc = description.trim();
 
   if (!trimmedTitle) {
-    errors.title = 'Title is required.';
+    errors.title = "Title is required.";
   } else if (trimmedTitle.length > MAX_TITLE_LENGTH) {
     errors.title = `Title must be ${MAX_TITLE_LENGTH} characters or fewer.`;
   }
 
   if (!trimmedDesc) {
-    errors.description = 'Description is required.';
+    errors.description = "Description is required.";
   } else if (trimmedDesc.length > MAX_DESCRIPTION_LENGTH) {
     errors.description = `Description must be ${MAX_DESCRIPTION_LENGTH} characters or fewer.`;
   }
@@ -35,13 +40,13 @@ function validate(title: string, description: string): FormErrors {
 }
 
 export function ProjectForm({ mode, initial, onSubmit, onCancel }: Props) {
-  const [title, setTitle] = useState(initial?.title ?? '');
-  const [description, setDescription] = useState(initial?.description ?? '');
+  const [title, setTitle] = useState(initial?.title ?? "");
+  const [description, setDescription] = useState(initial?.description ?? "");
   const [difficulty, setDifficulty] = useState<Difficulty>(
-    initial?.difficulty ?? 'medium',
+    initial?.difficulty ?? "medium",
   );
   const [status, setStatus] = useState<ProjectStatus>(
-    initial?.status ?? 'open',
+    initial?.status ?? "open",
   );
   const [errors, setErrors] = useState<FormErrors>({});
 
@@ -55,8 +60,8 @@ export function ProjectForm({ mode, initial, onSubmit, onCancel }: Props) {
     onSubmit({ title, description, difficulty, status });
   }
 
-  const heading = mode === 'create' ? 'New Project' : 'Edit Project';
-  const submitLabel = mode === 'create' ? 'Create' : 'Save';
+  const heading = mode === "create" ? "New Project" : "Edit Project";
+  const submitLabel = mode === "create" ? "Create" : "Save";
 
   return (
     <div
@@ -75,7 +80,7 @@ export function ProjectForm({ mode, initial, onSubmit, onCancel }: Props) {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              aria-describedby={errors.title ? 'title-error' : undefined}
+              aria-describedby={errors.title ? "title-error" : undefined}
               aria-invalid={!!errors.title}
             />
             {errors.title && (
@@ -93,16 +98,12 @@ export function ProjectForm({ mode, initial, onSubmit, onCancel }: Props) {
               onChange={(e) => setDescription(e.target.value)}
               rows={4}
               aria-describedby={
-                errors.description ? 'description-error' : undefined
+                errors.description ? "description-error" : undefined
               }
               aria-invalid={!!errors.description}
             />
             {errors.description && (
-              <span
-                id="description-error"
-                className="field-error"
-                role="alert"
-              >
+              <span id="description-error" className="field-error" role="alert">
                 {errors.description}
               </span>
             )}
