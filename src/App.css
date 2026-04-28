@@ -1,10 +1,67 @@
 .app-shell {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  max-width: 60rem;
+  margin: 0 auto;
   gap: 1rem;
-  text-align: center;
   padding: 1.5rem;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.top-nav h1 {
+  margin: 0;
+}
+
+.current-user {
+  margin: 0;
+}
+
+.identity-panel,
+.users-panel {
+  border: 1px solid #d7d7d7;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.identity-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.create-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  min-width: 16rem;
+  flex: 1;
+}
+
+.error-message {
+  margin: 0;
+  color: #c81e1e;
+}
+
+.user-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.user-columns h3 {
+  margin-top: 0;
 }

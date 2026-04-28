@@ -42,6 +42,14 @@ CI workflow runs these checks on pull requests and pushes to `main`:
 - Project browsing, details, create/edit/delete, and join/switch behavior.
 - Active/inactive user lists.
 
+## Identity rules and edge cases
+
+- User names are normalized by trimming and collapsing repeated whitespace.
+- Names are unique case-insensitively (`alex` and `Alex` are duplicates).
+- Empty names are rejected.
+- Names longer than 40 characters are rejected.
+- Creating a valid user auto-switches the current local session to that user.
+
 ## Deploy
 
 - GitHub Pages deploy workflow: `.github/workflows/deploy.yml`

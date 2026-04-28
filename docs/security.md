@@ -5,6 +5,8 @@
 - Treat all user-provided text as untrusted input.
 - Normalize and trim text input before saving it to state.
 - Render user-generated values as plain text, not HTML.
+- Enforce a maximum local identity name length (40 chars).
+- Reject duplicate identity names (case-insensitive) before state updates.
 
 ## Dependency updates
 

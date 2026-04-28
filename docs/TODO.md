@@ -33,15 +33,15 @@ This checklist is intentionally split into very small, AI-friendly increments.
 
 ## Phase 2 - Identity flow (real functionality, piece by piece)
 
-- [ ] Add app state slice for current local user session (in-memory only).
-- [ ] Build "Create user" form with unique-name validation.
-- [ ] Show validation message for duplicate names and block submit.
-- [ ] Build "Switch user" dropdown/list for existing users.
-- [ ] Display current user clearly in top navigation/header.
-- [ ] Add unit tests for unique-name validator.
-- [ ] Add component tests for create-user and switch-user behavior.
-- [ ] Add security check: sanitize/trim name input and enforce max length.
-- [ ] Document identity rules and edge cases in README + `docs/security.md`.
+- [x] Add app state slice for current local user session (in-memory only).
+- [x] Build "Create user" form with unique-name validation.
+- [x] Show validation message for duplicate names and block submit.
+- [x] Build "Switch user" dropdown/list for existing users.
+- [x] Display current user clearly in top navigation/header.
+- [x] Add unit tests for unique-name validator.
+- [x] Add component tests for create-user and switch-user behavior.
+- [x] Add security check: sanitize/trim name input and enforce max length.
+- [x] Document identity rules and edge cases in README + `docs/security.md`.
 
 ## Phase 3 - Project CRUD (real functionality, piece by piece)
 
@@ -95,7 +95,7 @@ This checklist is intentionally split into very small, AI-friendly increments.
 
 ## Phase 7 - Deployment and operational readiness
 
-- [ ] Confirm production build pipeline and deploy from main branch.
+- [ ] Confirm production build pipeline and deploy from devel-jc branch.
 - [ ] Add preview deploys for pull requests (if platform supports).
 - [ ] Add simple health/availability check after deploy.
 - [ ] Add rollback instructions in `docs/deployment.md`.
